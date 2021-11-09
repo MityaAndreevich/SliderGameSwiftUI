@@ -15,7 +15,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
                 Text("Move slider as much closer to \(targetValue) as possible")
-                .frame(width: 250, height: 45)
+                .frame(height: 45)
+                .lineLimit(1)
                 .padding()
             HStack{
                 Text("0")
@@ -23,13 +24,16 @@ struct ContentView: View {
                 Text("100")
                     .frame(width: 60, height: 20)
             }
+            Spacer()
             ButtonView(buttonTitle: "Check me!", action: { alertPresenter.toggle() })
                 .alert("Your score:", isPresented: $alertPresenter, actions: {}) {
                     Text("\(computeScore())")
                 }
+                .padding()
             ButtonView(buttonTitle: "Restart", action: restartingGame)
         }
-        .padding()
+        .padding(.top, 150)
+        .padding(.bottom, 50)
     }
     
 private func computeScore() -> Int {
