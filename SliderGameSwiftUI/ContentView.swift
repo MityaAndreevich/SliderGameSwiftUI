@@ -37,15 +37,14 @@ struct ContentView: View {
         .padding(.bottom, 50)
     }
     
-private func computeScore() -> Int {
-    let difference = abs(targetValue - lround(currentValue))
-    print("Difference:\(difference), target: \(targetValue), current: \($currentValue)")
-    return 100 - difference
-}
+    private func computeScore() -> Int {
+        let difference = abs(targetValue - lround(currentValue))
+        print("Difference:\(difference), target: \(targetValue), current: \(currentValue)")
+        return 100 - difference
+    }
     
     private func restartingGame() {
         targetValue = Int.random(in: 0...100)
-        currentValue = 50
     }
 }
 

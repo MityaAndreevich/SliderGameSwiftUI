@@ -58,9 +58,9 @@
 				5F6FFABF273AC6A30093F0C0 /* SliderGameSwiftUIApp.swift */,
 				5F6FFAC1273AC6A30093F0C0 /* ContentView.swift */,
 				5F6FFACD273ACAA90093F0C0 /* ButtonView.swift */,
+				5F6FFAD1273AFC0B0093F0C0 /* Slider.swift */,
 				5F6FFAC3273AC6A40093F0C0 /* Assets.xcassets */,
 				5F6FFAC5273AC6A40093F0C0 /* Preview Content */,
-				5F6FFAD1273AFC0B0093F0C0 /* Slider.swift */,
 			);
 			path = SliderGameSwiftUI;
 			sourceTree = "<group>";
