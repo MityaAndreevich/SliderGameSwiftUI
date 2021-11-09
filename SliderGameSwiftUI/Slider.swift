@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Slider: UIViewRepresentable {
     
-    
     @Binding var sliderValue: Double
     
     func makeUIView(context: Context) -> UISlider {
@@ -18,13 +17,11 @@ struct Slider: UIViewRepresentable {
         slider.minimumValue = 0
         slider.thumbTintColor = .red
         slider.value = Float(sliderValue)
-        
         slider.addTarget(
             context.coordinator,
             action: #selector(Coordinator.sliderMoved),
             for: .valueChanged
         )
-        
         return slider
     }
     

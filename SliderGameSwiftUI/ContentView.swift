@@ -22,6 +22,7 @@ struct ContentView: View {
                 Text("0")
                     .frame(width: 60, height: 20)
                 Slider(sliderValue: $currentValue)
+                    .opacity(getOpacity())
                 Text("100")
                     .frame(width: 60, height: 20)
             }
@@ -39,8 +40,12 @@ struct ContentView: View {
     
     private func computeScore() -> Int {
         let difference = abs(targetValue - lround(currentValue))
-        print("Difference:\(difference), target: \(targetValue), current: \(currentValue)")
         return 100 - difference
+    }
+    
+    private func getOpacity() -> Double {
+        let opacity = abs(targetValue - lround(currentValue))
+        return Double(100 - opacity) / 100
     }
     
     private func restartingGame() {
