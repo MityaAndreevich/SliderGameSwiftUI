@@ -21,6 +21,7 @@ struct ContentView: View {
             HStack{
                 Text("0")
                     .frame(width: 60, height: 20)
+                Spacer()
                 Text("100")
                     .frame(width: 60, height: 20)
             }
@@ -37,9 +38,8 @@ struct ContentView: View {
     }
     
 private func computeScore() -> Int {
-    let difference = Int(abs(targetValue - lround(currentValue)))
-    let score = 100 - difference
-    return score
+    let difference = abs(targetValue - lround(currentValue))
+    return 100 - difference
 }
     
     private func restartingGame() {
