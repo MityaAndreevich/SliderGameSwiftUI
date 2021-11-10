@@ -21,8 +21,7 @@ struct ContentView: View {
             HStack{
                 Text("0")
                     .frame(width: 60, height: 20)
-                Slider(sliderValue: $currentValue)
-                    .opacity(getOpacity())
+                Slider(sliderValue: $currentValue, opacity: getOpacity())
                 Text("100")
                     .frame(width: 60, height: 20)
             }
@@ -43,9 +42,9 @@ struct ContentView: View {
         return 100 - difference
     }
     
-    private func getOpacity() -> Double {
-        let opacity = abs(targetValue - lround(currentValue))
-        return Double(100 - opacity) / 100
+    private func getOpacity() -> CGFloat {
+        let difference = abs(targetValue - lround(currentValue))
+        return (100 - CGFloat(difference)) / 100
     }
     
     private func restartingGame() {
