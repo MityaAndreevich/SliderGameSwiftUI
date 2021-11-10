@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var currentValue: Double = 50
     @State private var targetValue = Int.random(in: 0...100)
-    
     @State private var alertPresenter = false
+    
     var body: some View {
         VStack {
-                Text("Move slider as much closer to \(targetValue) as possible")
+            Text("Move slider as much closer to \(targetValue) as possible")
                 .frame(height: 45)
-                .lineLimit(1)
                 .padding()
             HStack{
                 Text("0")
